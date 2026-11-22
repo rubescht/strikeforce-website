@@ -7,3 +7,7 @@ Static site for Strikeforce Cyber (a Code Black Group company). No build step.
 - Hosted on Render as a static site from the `main` branch (publish directory `./`). Every push to `main` redeploys automatically.
 
 **To do before the domain switch:** connect the contact form to an email or CRM endpoint (it currently shows a confirmation only).
+
+## Security
+Every page carries a Content Security Policy, referrer policy and anti-framing guard (`assets/guard.js`).
+The policy pins each inline script by hash, so **after editing any inline `<script>` run `python3 tools/csp.py`**.
